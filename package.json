@@ -1,0 +1,17 @@
+{
+  "name": "js-fundamentals-2",
+  "version": "1.0.0",
+  "description": "JavaScript for apprenticeship bootcamp fundamentals 2",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest test --notify"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
