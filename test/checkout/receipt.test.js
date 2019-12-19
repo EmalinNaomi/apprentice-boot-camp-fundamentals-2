@@ -1,8 +1,10 @@
 const { Checkout } = require('../../main/checkout/checkout.js');
 
 describe('Receipt', function () {
+  const prices = {priceOfA : 50};
+
   test('A single item is added to the receipt on checkout', function () {
-    let checkout = new Checkout();
+    let checkout = new Checkout(prices);
     checkout.scan('A');
     expect(checkout.getReceipt()).toEqual(expect.stringContaining(
       'A: 50\n' +
@@ -10,7 +12,7 @@ describe('Receipt', function () {
   });
 
   test('One of each item is added to the receipt on checkout', function () {
-    let checkout = new Checkout();
+    let checkout = new Checkout(prices);
     checkout.scan('A');
     checkout.scan('B');
     checkout.scan('C');
@@ -25,7 +27,7 @@ describe('Receipt', function () {
   });
 
   test('Offers are applied to receipt when multi-buy checked out', function () {
-    let checkout = new Checkout();
+    let checkout = new Checkout(prices);
     checkout.scan('A');
     checkout.scan('A');
     checkout.scan('B');
